@@ -13,23 +13,23 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  steps:
-    - name: Set up Perl
-      run: |
-        choco install strawberryperl
-        echo "##[add-path]C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin"
+    steps:
+      - name: Set up Perl
+        run: |
+          choco install strawberryperl
+          echo "##[add-path]C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin"
 
-    - name: perl -V
-      run: perl -V
+      - name: perl -V
+        run: perl -V
 
-    - uses: actions/checkout@v2
-    - name: "install-with-cpm"
+      - uses: actions/checkout@v2
+      - name: "install-with-cpm"
 
-      uses: perl-actions/install-with-cpm@stable
-      with:
-        install: |
-          abbreviation
-          ACH
-    # checking that both modules are installed
-    - run: perl -Mabbreviation -e1
-    - run: perl -MACH -e1
+        uses: perl-actions/install-with-cpm@stable
+        with:
+          install: |
+            abbreviation
+            ACH
+      # checking that both modules are installed
+      - run: perl -Mabbreviation -e1
+      - run: perl -MACH -e1
