@@ -37,5 +37,5 @@ jobs:
         uses: perl-actions/install-with-cpm@stable
         with:
           cpanfile: "cpanfile"
-          sudo: true
+          sudo: false
       - run: dzil test
