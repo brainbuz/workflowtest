@@ -13,7 +13,7 @@ on:
 jobs:
   build:
 # This creates two dimensions:
-#   One will be called "os"  with the list of the names of the 3 runners of GitHub Actions
+# One will be called "os"  with the list of the names of the 3 runners of GitHub Actions
 #   The other indicates version numbers of perl
 # The words "os" and "perl" are free text here, they are like variable names.
 # GitHub Action will run the job on 3x2 = 6 different setups
