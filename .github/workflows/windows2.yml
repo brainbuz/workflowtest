@@ -27,7 +27,7 @@ jobs:
       - name: Set up Perl
         run: |
           choco install strawberryperl
-          echo "##[add-path]C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin"
+          # echo "##[add-path]C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin"
 
       - name: perl -V
         run: perl -V
