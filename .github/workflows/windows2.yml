@@ -48,7 +48,7 @@ jobs:
             Software::License::Perl_5
 
       - name: test the distribution
-      - run: dzil test
+        run: dzil test
 
 
 
