@@ -33,11 +33,12 @@ jobs:
         run: perl -V
 
       - uses: actions/checkout@v2
-      - name: "install-with-cpm"
 
-      #   uses: perl-actions/install-with-cpm@stable
-      #   with:
-      #     install: |
+      - uses: perl-actions/install-with-cpm@stable
+
+      - name: "install-with-cpm"
+      - name: Install Dependencies
+        run: cpm install -g --no-test --show-build-log-on-failure --cpanfile cpanfile
       #       abbreviation
       #       ACH
       # # checking that both modules are installed
