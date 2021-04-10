@@ -34,11 +34,18 @@ jobs:
 
       - uses: actions/checkout@v2
 
-      - uses: perl-actions/install-with-cpm@stable
+      - name: uses install-with-cpm
+        uses: perl-actions/install-with-cpm@stable
+        with:
+          cpanfile: "cpanfile"
+          sudo: false
+      - run: dzil test
 
-      - name: "install-with-cpm"
-      - name: Install Dependencies
-        run: cpm install -g --no-test --show-build-log-on-failure --cpanfile cpanfile
+
+      # - uses: perl-actions/install-with-cpm@stable
+
+      # - name: "install-with-cpm"
+      #   run: cpm install -g --no-test --show-build-log-on-failure --cpanfile cpanfile
       #       abbreviation
       #       ACH
       # # checking that both modules are installed
