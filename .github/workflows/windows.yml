@@ -1,4 +1,5 @@
-name: workflow_windows
+# common ci conf 2021-09-11
+name: Test on Windows
 
 # Controls when the action will run.
 on:

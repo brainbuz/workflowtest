@@ -1,9 +1,10 @@
 # common ci conf 2021-09-11
-name: test_with_distzilla
+name: test on linux with prove 
 
 # Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push or pull request events but only for the 
+  # listed branches
   push:
     branches: [ main ]
   pull_request:
@@ -35,9 +36,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: uses install-with-cpm
         uses: perl-actions/install-with-cpm@stable
         with:
           cpanfile: "cpanfile"
           sudo: false
-      - run: dzil test
+
+      - name: Run Tests
+        run: |
+          prove -lv t/*.t
+
